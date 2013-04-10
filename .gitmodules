@@ -1,3 +1,12 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "/home/wlad/.vim/bundle/solarized"]
+	path = /home/wlad/.vim/bundle/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "submodule"]
+	path = submodule
+	url = git://github.com/Lokaltog/vim-distinguished.git
+[submodule "bundle/distinguished"]
+	path = bundle/distinguished
+	url = git://github.com/Lokaltog/vim-distinguished.git
