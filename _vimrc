@@ -389,6 +389,9 @@ augroup END
 
 augroup Build
     autocmd!
+    autocmd BufEnter *.md 
+	\ set tabstop=2
+	\ | set shiftwidth=2
     autocmd BufEnter *.bat nnoremap <buffer> <F5> :!% <CR>
     autocmd BufEnter *.bat nnoremap <buffer> <F6> :call RunBatWithParam() <CR>
     autocmd BufEnter *.cpp nnoremap <buffer> <F5> :call CompileCppFile()<CR>
@@ -420,7 +423,7 @@ augroup Build
     "})();
     "And put this filter into User includes:  file//*.md.html
     "And Exclude http://*//
-    autocmd BufWritePost *.md :call PandocConv() 
+    " autocmd BufWritePost *.md :call PandocConv() 
 augroup END
 
 function! QuickfixToggle()
@@ -540,3 +543,6 @@ highlight SpecialKey ctermfg=8 guifg=DimGrey
 set ve=all
 set belloff=all
 nnoremap <leader>p :put = strftime('%H:%M')<CR>
+noremap <Up> xi``<Esc>P
+noremap <Down> dpBxx
+
