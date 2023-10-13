@@ -545,4 +545,5 @@ set belloff=all
 nnoremap <leader>p :put = strftime('%H:%M')<CR>
 noremap <Up> xi``<Esc>P
 noremap <Down> dpBxx
-
+hi my_bg_cursor guifg=#fabd2f guibg=#3c3836
+hi! link CursorLineNr my_bg_cursor
