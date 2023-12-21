@@ -59,9 +59,9 @@ let NERDTreeChDirMode=2
 set undofile
 " TODO: fix this
 if has("unix")
-    set undodir=$USERPROFILE/.vimundodir
-    set dir=$USERPROFILE/.vimswap
-    set backupdir=$USERPROFILE/.vimbackups
+    set undodir=~/.vimundodir
+    set dir=~/.vimswap
+    set backupdir=~/.vimbackups
     silent ":!mkdir -p " . dir
     silent ":!mkdir -p " . undodir
     silent ":!mkdir -p " . backupdir
@@ -122,7 +122,10 @@ set hlsearch
 set incsearch
 set scrolloff=99999
 au BufRead * silent! lcd %:p:h | set tag=tags;/
-au GUIEnter * simalt ~x  
+
+if !has("unix")
+	au GUIEnter * simalt ~x  
+endif
 ino <C-C> <Esc>
 au FocusLost * silent! :w
 set autochdir
