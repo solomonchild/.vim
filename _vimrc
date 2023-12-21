@@ -83,12 +83,18 @@ if has("gui_running")
     colorscheme base16-gruvbox-dark-soft
     if has("win32")
         set rop=type:directx
-        "This is a workaround for window size change when sourcing vimrc
-        "i.e. we only set font if it is not already set (on a startup)
-        let font = execute('set guifont?')
-        let font = substitute(substitute(font, '\n', '', ''), ' \+guifont', 'guifont', '')
+    endif
+    "This is a workaround for window size change when sourcing vimrc
+    "i.e. we only set font if it is not already set (on a startup)
+    let font = execute('set guifont?')
+    let font = substitute(substitute(font, '\n', '', ''), ' \+guifont', 'guifont', '')
+    if has("win32")
         if font != "guifont=Hack:h15:cANSI"
             set guifont=Hack:h15:cANSI
+        endif
+    else
+        if font != "guifont=Hack-Regular:h15"
+            set guifont=Hack-Regular:h15
         endif
     endif
 endif
