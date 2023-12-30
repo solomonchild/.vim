@@ -10,7 +10,8 @@ call plug#begin('~/vimfiles/plugged')
     Plug 'vim-jp/vim-cpp'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'majutsushi/tagbar'
-    Plug 'danielwe/base16-vim'
+    "Plug 'danielwe/base16-vim'
+    Plug 'sainnhe/gruvbox-material'
     Plug 'scrooloose/nerdcommenter'
     Plug 'mhinz/vim-startify'
 call plug#end()
@@ -80,7 +81,9 @@ else
     set foldmethod=syntax
 endif
 if has("gui_running")
-    colorscheme base16-gruvbox-dark-soft
+    "colorscheme base16-gruvbox-dark-soft
+    colorscheme gruvbox-material
+    set background=light
     if has("win32")
         set rop=type:directx
     endif
