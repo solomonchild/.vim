@@ -25,7 +25,7 @@ set stl+=%t
 set stl+=%#StatusLine#
 set stl+=\ Buf:%n
 set statusline+=%=
-set statusline+=%m\ chr=0x%02.2B\ byte_no=%o\ L=%l\ C=%c\ [%p%%]
+set statusline+=%m\ chr=0x%02.2B\ byte_no=%o\ L=%02l\ C=%02c\ [%p%%]
 set titlestring=%F\ %m[%p%%]
 syntax on
 set mousefocus
@@ -127,7 +127,7 @@ set shiftround
 set nu rnu
 set ls=2
 set hlsearch
-"set expandtab
+set expandtab
 set incsearch
 set scrolloff=99999
 au BufRead * silent! lcd %:p:h | set tag=tags;/
@@ -147,7 +147,7 @@ function! CompileCppFile()
     silent w
 
     if has("win32")
-			!"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64_x86\vcvarsamd64_x86.bat" && cl.exe % /nologo /Fa%:r.exe 2>quickfixerrorfile
+			!"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64_x86\vcvarsamd64_x86.bat" && cl.exe % /std:c++17 /nologo /Fa%:r.exe 2>quickfixerrorfile
 			"/Fo %:r.exe
 			"silent !g++ % -march=native -g3 -O0 --std=c++1z -Werror -Wall -pedantic -o %:r.exe 2>quickfixerrorfile
 	else
